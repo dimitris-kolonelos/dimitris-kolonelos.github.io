@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://dimitris-kolonelos.gihub.io/sitemap.xml
+Sitemap: https://dimitris-kolonelos.github.io/sitemap.xml
