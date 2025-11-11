@@ -30,3 +30,24 @@ body {
     order: initial !important;
   }
 }
+
+/* Force profile photo column to appear on the left */
+.home-section .row {
+  display: flex !important;
+  flex-direction: row !important; /* left-to-right */
+}
+
+.home-section .row > div:last-child {
+  order: 0 !important; /* image */
+}
+
+.home-section .row > div:first-child {
+  order: 1 !important; /* text */
+}
+
+/* keep mobile stacking */
+@media (max-width: 768px) {
+  .home-section .row {
+    flex-direction: column !important;
+  }
+}
