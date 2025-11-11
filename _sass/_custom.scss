@@ -1,53 +1,24 @@
-body {
-  border: 5px solid red !important;
-}
+/* ===========================
+   Custom overrides for Al-folio
+   =========================== */
 
-/* Force About/home profile image on the left */
-.about {
-  display: flex !important;
-  flex-direction: row !important; /* left-to-right order */
-  align-items: center !important;
-  gap: 1.5rem !important;
-}
-
-/* Ensure image comes before text even if HTML order is reversed */
-.about .profile-img {
-  order: 0 !important;
-}
-
-.about .about-text {
-  order: 1 !important;
-}
-
-/* keep mobile stacking behavior */
-@media (max-width: 768px) {
-  .about {
-    flex-direction: column !important;
-  }
-
-  .about .profile-img,
-  .about .about-text {
-    order: initial !important;
-  }
-}
-
-/* Force profile photo column to appear on the left */
+/* 1. Move profile photo column to the left on desktop */
 .home-section .row {
   display: flex !important;
-  flex-direction: row !important; /* left-to-right */
+  flex-direction: row-reverse !important; /* reverses Bootstrap order */
+  align-items: center;
+  gap: 1.5rem;
 }
 
-.home-section .row > div:last-child {
-  order: 0 !important; /* image */
-}
-
-.home-section .row > div:first-child {
-  order: 1 !important; /* text */
-}
-
-/* keep mobile stacking */
+/* 2. Restore normal stacking on mobile */
 @media (max-width: 768px) {
   .home-section .row {
     flex-direction: column !important;
   }
+}
+
+/* 3. Optional: fine-tune spacing */
+.home-section img.profile {
+  max-width: 250px;
+  border-radius: 8px;
 }
