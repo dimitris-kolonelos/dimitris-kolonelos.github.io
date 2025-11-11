@@ -1,24 +1,22 @@
 /* ===========================
-   Custom overrides for Al-folio
+   Move profile photo to LEFT in Al-folio
    =========================== */
 
-/* 1. Move profile photo column to the left on desktop */
-.home-section .row {
-  display: flex !important;
-  flex-direction: row-reverse !important; /* reverses Bootstrap order */
-  align-items: center;
-  gap: 1.5rem;
-}
+/* Desktop and larger screens */
+@media (min-width: 768px) {
+  .home .col-lg-4.order-lg-2 {
+    order: 0 !important; /* image column */
+  }
 
-/* 2. Restore normal stacking on mobile */
-@media (max-width: 768px) {
-  .home-section .row {
-    flex-direction: column !important;
+  .home .col-lg-8.order-lg-1 {
+    order: 1 !important; /* text column */
   }
 }
 
-/* 3. Optional: fine-tune spacing */
-.home-section img.profile {
-  max-width: 250px;
-  border-radius: 8px;
+/* Keep default stacking on mobile */
+@media (max-width: 767.98px) {
+  .home .col-lg-4.order-lg-2,
+  .home .col-lg-8.order-lg-1 {
+    order: initial !important;
+  }
 }
